@@ -1,0 +1,36 @@
+## Docker file Instructions
+- Instructions are phrases in the Dockerfile with some Behaviors
+- is a set of instructions 
+- Dockerfile is file where ypu provide the steps to build your Docker images
+
+
+# to choose the base image
+FROM ubuntu:latest
+
+# Set the working directory in the image
+WORKDIR /app
+
+# COPY and ADD are both Dockerfile instructions that serve similar purpose
+# they let you copy files from specific location into a Docker image
+ADD . /app  # you can use URL insted of a local file
+ADD https:/asdf/asdf /home/ubuntu/spring-petclinci.jar
+ADD ./spring-petclinci.jar /home/ubuntu/spring-petclinci.jar
+COPY ./spring-petclinci.jar /home/ubuntu/spring-petclinci.jar
+COPY . /app # copy in a local file or directory from your host
+
+# execute the command while instal the necessary packages
+RUN apt-get update && apt-get install -y python3 python3-
+
+# Set env variables
+ENV NAME World
+
+# Run a Command to start the application or command to be executed while container creation
+# overwrite always, CMD can be changed
+CMD ["python3", "app.py"]
+
+# ENTRYPOINT instruction also executes when creating a new container, 
+# the diffrencewith CMD is can not be changed
+ENTRYPOINT [ "executable" ]
+
+# to expose ports used by container
+EXPOSE 8080

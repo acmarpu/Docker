@@ -1,0 +1,34 @@
+sudo apt-get update
+sudo apt-get install docker.io -y
+sudo systemctl status docker
+sudo usermod -aG docker ubuntu
+
+&&&
+
+https://get.docker.com/
+
+
+## Docker Build Command
+docker image --help
+docker image build -t Dockerfile .
+docker image ls 
+docker image ls -a
+
+docker container run apache2 # Container will teriminate after creation 
+docker container ls
+docker container ls -a
+docker container run -d jenkins
+docker container run -d -p 8080:80 myapache2 sleep 1d
+docker container run it openjdk:8 /bin/bash 
+
+# remove images
+docker rmi <imageId/Name> # Dangling Images
+docker rmi $(docker images -q) # Removing all Images
+
+# remove containers
+docker stop <containerId/Name>
+docker stop $(docker ps -aq) #Stop containers 
+docker rm $(docker ps -aq) # All containers
+docker rm $(docker ps -aq --filter  status="exited") # Remove all Stopped Containers
+
+

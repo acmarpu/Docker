@@ -1,0 +1,140 @@
+Docker:-
+
+Docker is a software platform that allows you to build, test, and deploy applications quickly. 
+Docker packages software into standardized units called containers that have everything the software needs 
+to run including libraries, system tools, code, and runtime. Using Docker, 
+you can quickly deploy and scale applications into any environment and know your code will run.
+
+Docker is a containerization platform that provides easy way to containerize your applications, 
+which means, using Docker you can build container images, 
+run the images to create containers and also push these containers to container regestries such as 
+dockerhub Quay.io so on 
+
+
+Docker Daemon: 
+- A persistent background process that manages Docker images, containers, networks, 
+and storage volumes. The Docker daemon constantly listens for Docker API requests and processes them.
+- The Docker client talks to the Docker daemon, which does the heavy lifting of building, running, 
+and distributing your Docker containers.
+
+is a process that you are going to install 
+Docker daemon ensure to create your requirments 
+
+The Docker daemon (dockerd) listens for docker API requests and manages Docker objects such as images, 
+containers, networks, and volumes, A daemon can also communicate with other daemons to manage Docker serices
+
+
+Docker Client :
+CLI commands
+the docker  client (docker) is the primary way that many Docker users interact with Docker. 
+When you use commankds such as docker run, the client sens these commands to dockerd, whcih carries them out.
+the docker command uses the docker API the docker client can communicate with more than one daemon 
+
+docker container run <image> execute process:
+- docker clinet will request the daemon
+- daemon will check for the image in the local registry 
+- if not found in the local registry, then the image is download from default registry to local registry (pull)
+- using the image in the local registry, a container is created
+
+how to create Docker image:-
+- Converting existing containers into images
+- Exporting VMS to Docker images
+- Creating Docker Image using Dockerfile(instruction based Approach) 
+
+Docker image:-
+- A Docker image is a file used to execute code in a Docker container. 
+Docker images act as a set of instructions to build a Docker container, like a template. 
+Docker images also act as the starting point when using Docker. 
+An image is comparable to a snapshot in virtual machine (VM) environments.
+light waight images 
+dont have full OS they use the resource form your Operating system which they are running 
+- An images is a read-only template with instructions for creating a docker container.
+
+Container:- 
+- Container is an isolated area which has every thing to run the application
+Container have a minimal operating system they will have base image
+- container has a package or its a bundle which is cobnation of application  
+and application libreys and system dependies 
+
+Docker tags: -
+Docker tags are just an alias for an image ID. 
+The tag's name must be an ASCII character string and may include lowercase and uppercase letters, digits, 
+underscores, periods, and dashes.
+
+Docker Registries :
+- A docker registry stores Docker images. Docker Hub is public registry that anyone can use and docker is 
+configured to look for images on docker hub by default. ypu can even run your own private registry.
+When you use the docker pull or docker run commands, that required images are pulled from your configured 
+registry. when you use the docker push command your image is pushed to your confiured registry
+
+Docker file :
+- is a set of instructions 
+- Dockerfile is file where ypu provide the steps to build your Docker images
+
+
+Docker States:
+- Running (Started)
+- Exited (Stopped)
+- Paused 
+
+Docker Continer Creation Modes
+- Attached Modes 
+  Our terminal will recive output from container
+- Detached Mode (background)
+  Container runs in the background an you will recive container id
+- Interactive Terminal
+  Create a container and login into interactive shell
+  
+## Image Layers
+
+
+Distroless :
+
+
+Bind Mounts : allows you to bind a directory in side your container 
+              it will bind a folder on your container with a folder on the Host
+
+volomes : volus also do same kind of solutions and offer you a better life cycle
+           
+
+
+Docker Networking :
+Networking allows you comminicate containers each other and Host
+
+Bridge Networking : default networking 
+
+Host Networking : Remove network isolation between the container and the Docker host.
+
+Overlay Network : verlay networks connect multiple Docker daemons together.
+                  create common networks 
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
