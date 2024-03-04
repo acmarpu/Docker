@@ -134,26 +134,21 @@ If you're running Docker on Linux, you have a third option: tmpfs mounts. When y
 As opposed to volumes and bind mounts, a tmpfs mount is temporary, and only persisted in the host memory. When the container stops, the tmpfs mount is removed, and files written there won't be persisted. 
 
 
+## Docker Network Drivers
+- implimenting some kind of networking on docker 
+- Docker's networking subsystem is pluggable, using drivers. Several drivers exist by default, and provide core networking functionality
 
-Distroless :
-
-
-Bind Mounts : allows you to bind a directory in side your container 
-              it will bind a folder on your container with a folder on the Host
-
-volomes : volus also do same kind of solutions and offer you a better life cycle
-           
-
-
-Docker Networking :
+## Docker Networking :
 Networking allows you comminicate containers each other and Host
 
-Bridge Networking : default networking 
+Bridge Networking : container communications with in the container network run on default Bridge networking 
+
+MACVLAN : uses linux MACVLAN bridge to establish connection
 
 Host Networking : Remove network isolation between the container and the Docker host.
+                  Container uses the networking stack of the host
 
-Overlay Network : verlay networks connect multiple Docker daemons together.
-                  create common networks 
+Overlay Network : overlay networks connect multiple Docker daemons together. create common networks 
 
 
  

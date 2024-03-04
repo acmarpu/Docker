@@ -23,7 +23,7 @@ docker stop <containerId/Name>
 docker stop $(docker ps -aq) #Stop containers 
 docker rm $(docker ps -aq) # All containers
 docker rm $(docker ps -aq --filter  status="exited") # Remove all Stopped Containers
-
+ 
 # volume
 docker volume create --help
 docker volume create myvol
@@ -36,3 +36,13 @@ docker container run --name cont5 --mount "type=bind,source=/app,target=/jars" -
 # Docker Essentail Command Line
 docker container exec container name  ls /
 docker container exec -it containername /bin/bash  # inside container
+
+# Port forwarding
+docker container run --name myapache2 -d -p (nodeip)8081:8088(containerIP) myapache2
+
+# Bridge network
+docker network create --help
+docker network create --driver bridge --subnet 10.11.0.0/16 mybridge
+docker network ls
+docker container run --name p1 --network mybridge -d alpine sleep 1d
+docker network inspect mybridge
