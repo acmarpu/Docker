@@ -141,18 +141,28 @@ As opposed to volumes and bind mounts, a tmpfs mount is temporary, and only pers
 ## Docker Networking :
 Networking allows you comminicate containers each other and Host
 
-Bridge Networking : container communications with in the container network run on default Bridge networking 
+Bridge Networking: container communications with in the container network run on default Bridge networking 
 
-MACVLAN : uses linux MACVLAN bridge to establish connection
+MACVLAN: uses linux MACVLAN bridge to establish connection
 
-Host Networking : Remove network isolation between the container and the Docker host.
-                  Container uses the networking stack of the host
+Host Networking: Remove network isolation between the container and the Docker host.
+                Container uses the networking stack of the host
 
-Overlay Network : overlay networks connect multiple Docker daemons together. create common networks 
+Overlay Network: overlay networks connect multiple Docker daemons together. create common networks 
+                overlay work when underlay establish
 
 
- 
- 
+ ## Docker Swarm
+ Nodes: Machines with docker installed and are reachable to each other
+          Node Types
+           * Manager
+           * Worker
+          Manager always tries to maintain state (desired == actual)
+ Service: Using Docker service the user describes desered state
+
+ Task: Atomic unit of Scheduling in Docker Swarm mode
+
+
 
 
 

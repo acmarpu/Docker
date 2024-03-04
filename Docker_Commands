@@ -46,3 +46,8 @@ docker network create --driver bridge --subnet 10.11.0.0/16 mybridge
 docker network ls
 docker container run --name p1 --network mybridge -d alpine sleep 1d
 docker network inspect mybridge
+
+## docker swarm
+docker swarm init --advertise-addr 172.16.1.1
+- above command will genarate join command to run thr worker nodes
+docker service create --replicas 2 --name tomcat tomcat:8
